@@ -23,7 +23,7 @@ A Django REST API backend for Electronic Logging Device (ELD) compliance and tri
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repo>
+   git clone https://github.com/Malombe-dev/server-ELD
    cd server
 
    
