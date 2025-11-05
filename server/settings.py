@@ -19,6 +19,10 @@ SECRET_KEY = config('SECRET_KEY', default='django-insecure-change-this-in-produc
 DEBUG = config('DEBUG', default=True, cast=bool)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1').split(',')
 
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -36,8 +40,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'corsheaders.middleware.CorsMiddleware',  # CORS - must be before CommonMiddleware
+    'corsheaders.middleware.CorsMiddleware', 
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -47,7 +52,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'server.urls'
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -85,7 +90,7 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-STATIC_URL = 'static/'
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # REST Framework settings
