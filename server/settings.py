@@ -106,7 +106,7 @@ REST_FRAMEWORK = {
 # CORS settings
 CORS_ALLOWED_ORIGINS = config(
     'CORS_ALLOWED_ORIGINS',
-    default='http://localhost:3000,http://localhost:5173'
+    default='http://localhost:3000,http://localhost:5173,ALLOWED_HOSTS=localhost,127.0.0.1,server-eld-qocc.onrender.com,https://client-eld.vercel.app'
 ).split(',')
 
 CORS_ALLOW_CREDENTIALS = True
