@@ -552,7 +552,7 @@ This project is licensed under the MIT License.
 
 For issues or questions:
 - Open an issue on GitHub
-- Email: [your-email@example.com]
+- Email: [vincentmutinda560@gmail.com]
 
 ---
 
